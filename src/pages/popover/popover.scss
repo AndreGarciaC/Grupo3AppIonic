@@ -1,0 +1,33 @@
+page-popover {
+  .large{
+    font-size: 22px;
+  }
+
+  .tiny{
+    font-size: 16px;
+  }
+
+  .popover-dot-tan{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid grey;
+    background-color: tan;
+  }
+
+  .popover-dot-grey{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: gray;
+  }
+
+  .popover-dot-white{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid grey;
+    background-color: white;
+  }
+}

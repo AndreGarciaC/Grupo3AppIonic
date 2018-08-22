@@ -1,0 +1,28 @@
+page-home {
+
+  .slideStyle{
+      border-radius: 15px;
+      width: 240px;
+      height: auto;
+    }
+
+  .itemStyle{
+    border: solid rgb(184, 181, 182);
+    border-radius: 20px;
+    background-color: #30d271;
+    font-family: 'Gaegu';
+    font-size: 16px;
+    margin-left: 25px;
+    width: 260px;
+    text-align: center;
+    height: 40px;
+  }
+
+  .toolbar-background{
+    background-image: url('../assets/imgs/header1.png');
+    background-size: cover;
+    background-repeat: repeat-x;
+  }
+
+
+}

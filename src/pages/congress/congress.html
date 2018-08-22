@@ -1,0 +1,67 @@
+<!--
+  Generated template for the CongressPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title class="phStyle">Eventos</ion-title>
+
+  <ion-buttons left>
+     <button ion-button icon-only (click)="abrirMenu()">
+         <ion-icon name="menu"></ion-icon>
+     </button>
+ </ion-buttons>
+</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item (click)="GoToLocation(32.70720, -117.162493)" class="eventname">
+      COMIC-CON
+      <p class="eventtxt" text-wrap>
+        Convención de comics (Julio)</p>
+      <p class="locationtxt" text-wrap>
+        Centro de convenciones de San Diego, San Diego, California</p>
+    </button>
+
+    <button ion-item (click)="GoToLocation(35.630273, 139.794188)" class="eventname">
+      COMIKET
+      <p class="eventtxt" text-wrap>
+        Mercado de historietas (Agosto y Diciembre)</p>
+      <p class="locationtxt">Centro de convenciones Tokyo Big Sight, Tokio, Japón</p>
+    </button>
+
+    <button ion-item (click)="GoToLocation(50.946758, 6.983276)" class="eventname">
+      GAMESCOM
+      <p class="eventtxt" text-wrap>
+        Convención de videojuegos (Agosto)</p>
+      <p class="locationtxt">Koelnmesse, Köln, Alemania</p>
+    </button>
+
+    <button ion-item (click)="GoToLocation(35.648508, 140.034744)" class="eventname">
+      TGS: Tokyo Game Show
+      <p class="eventtxt" text-wrap>
+        Convención de videojuegos (Septiembre)</p>
+      <p class="locationtxt">Makuhari Messe, Chiba, Japón</p>
+    </button>
+
+    <button ion-item (click)="GoToLocation(43.840974, 10.500785)" class="eventname">
+      Lucca Comics & Games
+      <p class="eventtxt" text-wrap>
+        Festival de comics y videojuegos (Octubre y Noviembre)</p>
+      <p class="locationtxt">Piazza San Romano, Lucca, Italia</p>
+    </button>
+
+    <button ion-item (click)="GoToLocation(48.972517, 2.516564)" class="eventname">
+      JAPAN EXPO
+      <p class="eventtxt" text-wrap>
+        Convención de cultura popular japonesa (Julio)</p>
+      <p class="locationtxt">Centro de Exposición París-Nord Villepinte, Villepinte, París</p>
+    </button>
+  </ion-list>
+
+</ion-content>

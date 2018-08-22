@@ -1,0 +1,35 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title class="phStyle">Acerca de Excelsior!</ion-title>
+    <ion-buttons right>
+      <button ion-button
+              icon-only
+              (click)="presentPopover(event$)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons left>
+       <button ion-button icon-only (click)="abrirMenu()">
+           <ion-icon name="menu"></ion-icon>
+       </button>
+   </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="{{fondo}}">
+<p class="{{tamanoFuente}}">
+  Excelsior! La famosa palabra firma de Stan Lee, fue tomada de una frase del
+  escudo de armas del estado de Nueva York, una expresión inglesa que significa
+  “Upward and Onward to Greater Glory!” (Hacia arriba y hacia adelante por la gloria mayor).
+  Esta expresión fue la inspiración para nombrar a esta aplicación, desarrollada bajo el concepto
+  de una enciclopedia de personajes de comics DC, Marvel y otros de la cultura popular.
+  <br>
+  Excelsior! forma parte del proyecto final del curso de programación de aplicaciones
+  multiplataforma con Ionic.
+  <br>
+  Realizado por: Paúl Vintimilla - Andrea García / Universidad Politécnica Salesiana
+</p>
+</ion-content>

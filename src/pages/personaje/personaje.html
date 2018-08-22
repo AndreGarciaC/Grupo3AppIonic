@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title *ngIf="(fuente == 'ComicVine')" class="phStyle">{{ itemSeleccionado.name }}</ion-title>
+    <ion-title *ngIf="(fuente == 'YouTube')">Visualizar video</ion-title>
+    <ion-buttons>
+      <button ion-item (click)="agregarCharacter()" class="btStyle">
+        Agregar a mi perfil
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding *ngIf="(fuente == 'ComicVine')" class="cvBackground">
+<img class="imgStyle" src="../assets/characters/slide1.jpg">
+  <ion-list class="accordion-list">
+    <ion-list-header *ngFor="let character of subCharacteres; let i = index" no-lines no-padding>
+        <button ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': character.open, 'section': !character.open}" class="btStyle">
+          <ion-icon item-left name="arrow-forward" *ngIf="!character.open"></ion-icon>
+          <ion-icon item-left name="arrow-down" *ngIf="character.open"></ion-icon>
+          {{ character.name }}
+        </button>
+        <ion-list *ngIf="character.children && character.open" no-lines>
+          <ion-list-header *ngFor="let child of character.children" no-padding>
+            <button ion-item *ngIf="!child.children" detail-none class="child-item" (click)="seleccionarSubcharacter(child, i)" text-wrap class="btStyle">
+              <h2>{{ child.name }}</h2>
+            </button>
+          </ion-list-header>
+      </ion-list>
+    </ion-list-header>
+  </ion-list>
+
+</ion-content>
+
+<ion-content padding *ngIf="(fuente == 'YouTube')">
+  <div class="video-container">
+    <iframe width="853" height="480" [src]="video" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <h2>
+    {{ itemSeleccionado.snippet.title }}
+  </h2>
+</ion-content>

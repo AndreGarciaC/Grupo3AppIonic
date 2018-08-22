@@ -1,0 +1,48 @@
+
+  <ion-list-header class="btStyle" color="comicyellow">Opciones</ion-list-header>
+  <ion-grid>
+  <ion-row justify-content-center>
+    <ion-col>
+      <button class="large"
+              ion-item
+              detail-none
+              (click)="changingFont('large')"
+              text-center>
+              A
+      </button>
+    </ion-col>
+
+    <ion-col>
+      <button class="tiny"
+              ion-item
+              detail-none
+              (click)="changingFont('tiny')"
+              text-center>
+              A
+      </button>
+    </ion-col>
+  </ion-row>
+
+    <ion-row padding justify-content-center>
+      <ion-col col-3>
+        <button (click)="changingBackground('classwhite')"
+                ion-button="dot"
+                class="popover-dot-white">
+        </button>
+      </ion-col>
+
+      <ion-col col-3>
+        <button (click)="changingBackground('classtan')"
+                ion-button="dot"
+                class="popover-dot-tan">
+        </button>
+      </ion-col>
+
+      <ion-col col-3>
+        <button (click)="changingBackground('classgray')"
+                ion-button="dot"
+                class="popover-dot-grey">
+        </button>
+      </ion-col>
+    </ion-row>
+</ion-grid>

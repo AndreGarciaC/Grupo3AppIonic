@@ -1,0 +1,38 @@
+page-info {
+
+p{
+
+  font-family: 'Gloria Hallelujah', cursive;
+}
+ .large{
+   font-size: 30px;
+ }
+
+ .tiny{
+   font-size: 14px;
+ }
+
+ .defecto{
+   font-size: 20px;
+ }
+
+ .classtan{
+   background-color: tan;
+ }
+
+ .classwhite{
+   background-color: white;
+ }
+
+ .classgray{
+   background-color: gray;
+   p{
+     color: white;
+   }
+ }
+
+ .popoverStyle .popover-content{
+   position: relative;
+ }
+
+}

@@ -1,0 +1,44 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Iniciar sesión</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<form (ngSubmit)="login()" [formGroup]="loginForm">
+		<ion-list inset>
+
+			<ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched', 'dirty']) }">
+				<ion-input type="text" placeholder="E-mail" formControlName="email"></ion-input>
+			</ion-item>
+
+			<div ngxErrors="email" #emailErrors="ngxErrors">
+				<div [ngxError]="['email', 'required']" [when]="['touched', 'dirty']">Por favor ingrese un e-mail válido</div>
+			</div>
+
+			<ion-item [ngClass]="{ invalid: passwordErrors.hasError('*', ['touched']) }">
+				<ion-input type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+			</ion-item>
+
+			<div ngxErrors="password" #passwordErrors="ngxErrors">
+				<div [ngxError]="['minlength', 'required']" [when]="['touched']">La contraseña debe tener al menos 5 carácteres</div>
+			</div>
+		</ion-list>
+
+		<div padding-horizontal>
+			<div class="form-error">{{loginError}}</div>
+
+			<button ion-button full type="submit" [disabled]="!loginForm.valid">Iniciar sesión</button>
+
+			<button ion-button icon-left block color="secondary" (click)="recoverAlert()">
+				<ion-icon name="key"></ion-icon>Recuperar contraseña</button>
+
+			<button ion-button icon-left block color="danger" (click)="signup()">
+				<ion-icon name="person-add"></ion-icon>Crear cuenta</button>
+
+		</div>
+	</form>
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <img src="{{user.foto}}" width="40px" style="display:inline-block" height="40px"/>
+    <ion-title class="phStyle" text-center>
+      Bienvenido {{user.nombre}}
+    </ion-title>
+
+    <ion-buttons left>
+      <button ion-button
+              icon-only
+              (click)="show_Menu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="tabStyle">
+
+  <ion-card *ngFor="let item of _cargaArchivoPvd.imagenes">
+
+    <ion-item>
+      <h2>{{ item.titulo }}</h2>
+    </ion-item>
+
+    <img src="{{ item.img }}">
+
+    <ion-card-content>
+      <p>{{ item.descripcion }}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col text-right>
+        <button ion-button clear small color="primary" icon-left (click)="compartirItem(item)">
+          <ion-icon name="share-alt"></ion-icon>
+          Compartir
+        </button>
+      </ion-col>
+      <ion-col text-left>
+        <button ion-button clear small color="primary" icon-left (click)="borrarItem(item)">
+          <ion-icon name="trash"></ion-icon>
+          Eliminar
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-fab bottom right (click)="mostrarModal()">
+    <button ion-fab color="danger"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" [enabled]="scroll">
+   <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

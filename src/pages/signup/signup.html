@@ -1,0 +1,43 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Registro</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<form (ngSubmit)="signup()" [formGroup]="form">
+		<ion-list inset>
+
+			<ion-item [ngClass]="{ invalid: nombreErrors.hasError('*', ['touched']) }">
+				<ion-input type="text" placeholder="Nombre" formControlName="nombre"></ion-input>
+			</ion-item>
+
+			<div ngxErrors="nombre" #nombreErrors="ngxErrors">
+				<div [ngxError]="['nombre', 'required']" [when]="['touched']">Por favor ingrese un nombre de usuario con al menos 4 caracteres</div>
+			</div>
+
+			<ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched']) }">
+				<ion-input type="text" placeholder="E-mail" formControlName="email"></ion-input>
+			</ion-item>
+
+			<div ngxErrors="email" #emailErrors="ngxErrors">
+				<div [ngxError]="['email', 'required']" [when]="['touched']">Por favor ingrese un e-mail válido</div>
+			</div>
+
+			<ion-item [ngClass]="{ invalid: passwordErrors.hasError('*', ['touched']) }">
+				<ion-input type="password" placeholder="Contraseña" formControlName="password"></ion-input>
+			</ion-item>
+
+			<div ngxErrors="password" #passwordErrors="ngxErrors">
+				<div [ngxError]="['minlength', 'required']" [when]="['touched']">La contraseña debe tener al menos 5 carácteres</div>
+			</div>
+		</ion-list>
+
+		<div padding-horizontal>
+			<div class="form-error">{{signupError}}</div>
+
+			<button ion-button full type="submit" [disabled]="!form.valid">Registrarse</button>
+		</div>
+	</form>
+</ion-content>

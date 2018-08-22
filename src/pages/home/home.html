@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+
+    <ion-title class="phStyle" text-center>Búsqueda de personajes</ion-title>
+
+    <ion-buttons left>
+      <button ion-button
+              icon-only
+              (click)="show_Menu()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="tabStyle" padding>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-searchbar placeholder="Ingrese personaje..." [(ngModel)]="personajeBusqueda" (keyup.enter)="buscarPersonaje()"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item class="itemStyle">
+          <ion-label>Fuente:</ion-label>
+          <ion-select item-content [(ngModel)]="fuente" interface="popover" [disabled]="personajeBusqueda == ''">
+            <ion-option>ComicVine</ion-option>
+            <ion-option>YouTube</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <button ion-button
+            (click)="buscarPersonaje()"
+            onclick="document.getElementById('barra').value = ''"
+            class="btStyle"
+            [disabled]="personajeBusqueda.length <= 0"
+            block
+            color="primary">
+            Buscar Personaje
+    </button>
+
+    <br>
+
+    <ion-slides loop="true" autoplay="2000">
+      <ion-slide *ngFor="let image of [1,2,3,4,5,6]">
+        <img class="slideStyle" data-src="../assets/characters/slide{{image}}.jpg">
+      </ion-slide>
+    </ion-slides>
+  </ion-grid>
+
+</ion-content>

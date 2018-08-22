@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Resultados en video para {{ busqueda }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item-sliding #slidingItem *ngFor="let personaje of personajes">
+      <ion-item text-wrap>
+        <ion-avatar item-start>
+          <img src="{{ personaje.snippet.thumbnails.default.url }}">
+        </ion-avatar>
+        <h2>{{ personaje.snippet.title }}</h2>
+        <p>{{ personaje.snippet.channelTitle }}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="azulTriston" (click)="personajeSeleccionado(personaje, slidingItem)">
+          <ion-icon name="play"></ion-icon>
+          Reproducir
+        </button>
+        <button ion-button color="yaMeArrepenti" (click)="cerrarSlide(slidingItem)">
+          <ion-icon name="close"></ion-icon>
+          Cancelar
+        </button>
+      </ion-item-options>
+      <ion-item-options side="left">
+        <button ion-button color="superPeligro" (click)="personajeEliminado(personaje, slidingItem)">
+          <ion-icon name="trash"></ion-icon>
+          Borrar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>

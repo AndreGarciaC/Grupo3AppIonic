@@ -1,0 +1,31 @@
+<link href="https://fonts.googleapis.com/css?family=Bangers|Caveat|Caveat+Brush|Denk+One|Gaegu|Gloria+Hallelujah|Kalam|Kranky|Londrina+Shadow|Permanent+Marker|Viga" rel="stylesheet">
+
+<ion-menu class="sideMenu" [content]="content">
+  <ion-header>
+    <ion-toolbar color="comicgreen">
+      <ion-title class="phStyle">Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="btStyle">
+    <ion-list>
+      <button ion-item (click)="paginaHome()">
+        <ion-icon name="home"></ion-icon>
+        Inicio
+      </button>
+      <button ion-item (click)="paginaCongress()">
+        <ion-icon name="people"></ion-icon>
+        Eventos
+      </button>
+      <button ion-item (click)="paginaInfo()">
+        <ion-icon name="information-circle"></ion-icon>
+        Acerca de
+      </button>
+      <button ion-item (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+        Cerrar sesión
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>

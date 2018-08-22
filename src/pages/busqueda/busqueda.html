@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="comicyellow">
+    <ion-title class="phStyle2">Resultados para {{ busqueda }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <div padding>
+    <ion-segment class="segmentStyle" [(ngModel)]="genero" (ionChange)="seleccionGenero()" color="dark">
+      <ion-segment-button value="Todos">
+        Todos
+      </ion-segment-button>
+      <ion-segment-button value="Masculino">
+        Masculino
+      </ion-segment-button>
+      <ion-segment-button value="Femenino">
+        Femenino
+      </ion-segment-button>
+      <ion-segment-button value="Otro">
+        Otros
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+<ion-list>
+  <ion-item-sliding #slidingItem *ngFor="let personaje of personajes">
+    <ion-item text-wrap *ngIf=" (personaje.gender == generoComic) || (flagGenero)">
+      <ion-avatar item-start>
+        <img src="">
+      </ion-avatar>
+      <h2 class="btStyle">{{ personaje.name }}</h2>
+      <h5 class="stxtStyle">{{ personaje.deck }}</h5>
+      <p class="stxtStyle">{{ personaje.publisher.name }}</p>
+    </ion-item>
+    <ion-item-options side="right">
+      <button ion-button color="azulTriston" (click)="personajeSeleccionado(personaje, slidingItem)">
+        <ion-icon name="eye"></ion-icon>
+        Detalles
+      </button>
+      <button ion-button color="yaMeArrepenti" (click)="cerrarSlide(slidingItem)">
+        <ion-icon name="close"></ion-icon>
+        Cancelar
+      </button>
+    </ion-item-options>
+    <ion-item-options side="left">
+      <button ion-button color="superPeligro" (click)="personajeEliminado(personaje, slidingItem)">
+        <ion-icon name="trash"></ion-icon>
+        Borrar
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+
+</ion-content>
